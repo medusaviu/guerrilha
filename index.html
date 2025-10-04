@@ -24,171 +24,135 @@
             overflow-x: hidden;
         }
 
-        /* POP-UP MOBILE FRIENDLY */
+        /* POP-UP */
         #popup-inicial {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(47, 79, 79, 0.98);
             display: flex; justify-content: center; align-items: center;
             z-index: 1000;
-            padding: 1rem;
         }
 
         .popup-content {
             background: var(--cor-fundo);
-            padding: 2rem; 
-            max-width: 800px;
-            width: 100%;
+            padding: 3rem; max-width: 800px;
             border: 3px solid var(--cor-terra);
-            box-shadow: 10px 10px 0px var(--cor-memoria);
+            box-shadow: 20px 20px 0px var(--cor-memoria);
             text-align: center;
-            max-height: 90vh;
-            overflow-y: auto;
         }
 
         .titulo-dissertacao {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1rem, 4vw, 1.4rem);
+            font-size: 1.4rem;
             color: var(--cor-memoria);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             line-height: 1.4;
         }
 
         .btn-acessar {
             background: var(--cor-destaque); color: white;
-            border: 2px solid var(--cor-texto); 
-            padding: clamp(12px, 4vw, 15px) clamp(20px, 8vw, 40px);
-            font-family: 'Playfair Display', serif; 
-            font-size: clamp(0.9rem, 3vw, 1.1rem);
-            margin-top: 1.5rem; 
-            cursor: pointer; 
-            transition: all 0.3s;
-            width: 100%;
-            max-width: 300px;
+            border: 2px solid var(--cor-texto); padding: 15px 40px;
+            font-family: 'Playfair Display', serif; font-size: 1.1rem;
+            margin-top: 2rem; cursor: pointer; transition: all 0.3s;
         }
 
         .btn-acessar:hover {
             transform: translateY(-3px); box-shadow: 5px 5px 0px var(--cor-texto);
         }
 
-        /* HEADER MOBILE */
+        /* HEADER */
         header {
             position: fixed; top: 0; width: 100%; background: var(--cor-fundo);
-            z-index: 100; padding: 1rem 0; border-bottom: 3px solid var(--cor-terra);
-            backdrop-filter: blur(10px);
+            z-index: 100; padding: 1.5rem 0; border-bottom: 3px solid var(--cor-terra);
         }
 
         .header-content {
             display: flex; justify-content: space-between; align-items: center;
-            max-width: 1200px; margin: 0 auto; padding: 0 1rem;
+            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
         }
 
         .logo {
-            font-family: 'Playfair Display', serif; 
-            font-size: clamp(1.2rem, 5vw, 1.8rem);
+            font-family: 'Playfair Display', serif; font-size: 1.8rem;
             font-weight: 700; color: var(--cor-memoria);
         }
 
-        /* MENU MOBILE */
-        nav ul { 
-            display: flex; 
-            list-style: none; 
-            gap: clamp(1rem, 3vw, 2rem);
-            flex-wrap: wrap;
-        }
-
+        nav ul { display: flex; list-style: none; gap: 2rem; }
         nav a {
-            color: var(--cor-texto); 
-            text-decoration: none; 
-            font-weight: 600;
-            position: relative; 
-            padding: 0.3rem 0;
-            font-size: clamp(0.8rem, 3vw, 0.9rem);
+            color: var(--cor-texto); text-decoration: none; font-weight: 600;
+            position: relative; padding: 0.5rem 0;
         }
-
         nav a::after {
             content: ""; position: absolute; bottom: 0; left: 0;
             width: 0; height: 2px; background: var(--cor-destaque);
             transition: width 0.3s;
         }
-
         nav a:hover::after { width: 100%; }
 
-        /* HERO MOBILE OPTIMIZED */
+        /* HERO - AJUSTADO */
         .hero {
             min-height: 100vh;
             display: flex; align-items: center;
             justify-content: center; position: relative;
             background: linear-gradient(45deg, var(--cor-fundo) 0%, #E8D5C4 100%);
-            padding: 6rem 1rem 2rem 1rem;
+            padding: 8rem 0 4rem 0;
         }
 
         .hero-content { 
             text-align: center; 
             z-index: 2; 
             max-width: 800px; 
-            width: 100%;
-            padding: 0 1rem;
+            padding: 0 2rem;
+            margin-top: 2rem;
         }
 
         .hero h1 {
             font-family: 'Playfair Display', serif; 
-            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-size: 3.5rem;
             margin-bottom: 1rem; 
             color: var(--cor-memoria);
             line-height: 1.1;
         }
 
         .hero .subtitle { 
-            font-size: clamp(0.9rem, 3.5vw, 1.05rem);
-            margin-bottom: 2rem;
+            font-size: 1.05rem;
+            margin-bottom: 2.2rem;
             line-height: 1.5;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
             color: #444;
         }
 
-        .hero-title-container {
-            display: flex; 
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-        }
-
-        /* MAPA CONTAINER MOBILE */
+        /* CONTAINER DO BOTÃO DO MAPA - MAIS CLEAN */
         .mapa-container {
-            margin: 2rem auto;
+            margin: 3rem auto;
             max-width: 600px;
-            width: 100%;
             border: 3px solid var(--cor-terra);
-            box-shadow: 10px 10px 0px var(--cor-memoria);
-            position: relative; 
-            background: white;
-            padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 3vw, 2rem);
+            box-shadow: 15px 15px 0px var(--cor-memoria);
+            position: relative; background: white;
+            padding: 2.5rem 2rem;
             text-align: center;
         }
 
         .mapa-container::before {
             content: "MAPA INTERATIVO";
-            position: absolute; top: -12px; left: 20px;
+            position: absolute; top: -15px; left: 20px;
             background: var(--cor-fundo); padding: 0 1rem;
             font-family: 'Playfair Display', serif;
-            font-size: clamp(0.7rem, 2.5vw, 0.9rem); 
-            color: var(--cor-terra);
+            font-size: 0.9rem; color: var(--cor-terra);
         }
 
         .btn-mapa {
             background: var(--cor-destaque);
             color: white;
             border: 2px solid var(--cor-texto);
-            padding: clamp(15px, 4vw, 18px) clamp(25px, 8vw, 45px);
+            padding: 18px 45px;
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1rem, 3.5vw, 1.2rem);
+            font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s;
             display: inline-block;
             text-decoration: none;
-            margin: 1rem 0;
-            width: 100%;
-            max-width: 280px;
+            margin: 1.5rem 0;
         }
 
         .btn-mapa:hover {
@@ -198,318 +162,127 @@
         }
 
         .icone-mapa {
-            font-size: clamp(2rem, 8vw, 2.5rem);
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             display: block;
         }
 
         .texto-mapa {
-            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            font-size: 0.9rem;
             color: var(--cor-memoria);
             margin-top: 1rem;
             line-height: 1.5;
             opacity: 0.8;
         }
 
-        /* SEÇÕES MOBILE */
-        .section { 
-            padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 3vw, 2rem); 
-            position: relative; 
-        }
-
+        /* SEÇÕES */
+        .section { padding: 6rem 2rem; position: relative; }
         .section:nth-child(even) { background: linear-gradient(45deg, #E8D5C4 0%, var(--cor-fundo) 100%); }
-        
-        .container { 
-            max-width: 1000px; 
-            margin: 0 auto;
-            width: 100%;
-        }
+        .container { max-width: 1000px; margin: 0 auto; }
 
-        .section-header { 
-            text-align: center; 
-            margin-bottom: clamp(2rem, 6vw, 4rem); 
-        }
-
+        .section-header { text-align: center; margin-bottom: 4rem; }
         .section-header h2 {
-            font-family: 'Playfair Display', serif; 
-            font-size: clamp(1.8rem, 6vw, 2.5rem);
-            color: var(--cor-memoria); 
-            display: inline-block;
-            border-bottom: 3px solid var(--cor-destaque); 
-            padding-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif; font-size: 2.5rem;
+            color: var(--cor-memoria); display: inline-block;
+            border-bottom: 3px solid var(--cor-destaque); padding-bottom: 0.5rem;
         }
 
-        /* LAYOUT MOBILE */
-        .sobre-content { 
-            display: grid; 
-            grid-template-columns: 1fr;
-            gap: clamp(2rem, 5vw, 4rem); 
-            align-items: start; 
-        }
-
-        .sobre-text { 
-            font-size: clamp(1rem, 3.5vw, 1.1rem); 
-            line-height: 1.7;
-            text-align: justify;
-        }
-
+        /* LAYOUT */
+        .sobre-content { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
+        .sobre-text { font-size: 1.1rem; line-height: 1.8; }
+    .sobre-text.contexto-justificado, .sobre-text.sobre-justificado { text-align: justify; }
+    .contexto-justificado { text-align: justify; }
         .sobre-text p { margin-bottom: 1.5rem; }
 
         .autor-card {
-            background: white; 
-            padding: clamp(1.5rem, 4vw, 2rem); 
-            border: 2px solid var(--cor-terra);
-            box-shadow: 6px 6px 0px var(--cor-memoria); 
-            position: relative;
-            order: -1;
+            background: white; padding: 2rem; border: 2px solid var(--cor-terra);
+            box-shadow: 8px 8px 0px var(--cor-memoria); position: relative;
         }
 
         .autor-card::before {
-            content: "PESQUISADOR"; 
-            position: absolute; 
-            top: -12px; 
-            left: 20px;
-            background: var(--cor-fundo); 
-            padding: 0 1rem;
-            font-size: clamp(0.7rem, 2.5vw, 0.8rem); 
-            font-weight: 600; 
-            color: var(--cor-destaque);
+            content: "PESQUISADOR"; position: absolute; top: -12px; left: 20px;
+            background: var(--cor-fundo); padding: 0 1rem;
+            font-size: 0.8rem; font-weight: 600; color: var(--cor-destaque);
         }
 
-        /* VÍDEOS MOBILE */
-        .videos-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); 
-            gap: 1.5rem; 
-        }
-
+        /* VÍDEOS */
+        .videos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
         .video-item {
-            background: white; 
-            border: 2px solid var(--cor-terra);
-            transition: all 0.3s; 
-            position: relative;
+            background: white; border: 2px solid var(--cor-terra);
+            transition: all 0.3s; position: relative;
         }
+        .video-item:hover { transform: translateY(-10px); box-shadow: 10px 10px 0px var(--cor-memoria); }
+        .video-item iframe { width: 100%; height: 200px; border: none; }
+        .video-info { padding: 1.5rem; }
+        .video-info h3 { font-family: 'Playfair Display', serif; color: var(--cor-memoria); margin-bottom: 0.5rem; }
 
-        .video-item:hover { transform: translateY(-5px); box-shadow: 8px 8px 0px var(--cor-memoria); }
-        
-        .video-item iframe { 
-            width: 100%; 
-            height: clamp(160px, 40vw, 200px); 
-            border: none; 
-        }
-        
-        .video-info { padding: 1.2rem; }
-        
-        .video-info h3 { 
-            font-family: 'Playfair Display', serif; 
-            color: var(--cor-memoria); 
-            margin-bottom: 0.5rem;
-            font-size: clamp(0.9rem, 3vw, 1rem);
-        }
-
-        .video-info p {
-            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
-        }
-
-        /* CRÉDITOS MOBILE */
-        .creditos-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); 
-            gap: 1.5rem; 
-        }
-
+        /* CRÉDITOS */
+        .creditos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
         .credito-card {
-            background: white; 
-            padding: clamp(1.5rem, 4vw, 2rem); 
-            border: 2px solid var(--cor-terra);
-            text-align: center; 
-            transition: transform 0.3s; 
-            position: relative;
+            background: white; padding: 2rem; border: 2px solid var(--cor-terra);
+            text-align: center; transition: transform 0.3s; position: relative;
         }
-
-        .credito-card:hover { transform: rotate(-1deg); box-shadow: 6px 6px 0px var(--cor-memoria); }
-        
-        .credito-card h3 { 
-            font-family: 'Playfair Display', serif; 
-            color: var(--cor-memoria); 
-            margin-bottom: 1rem;
-            font-size: clamp(0.9rem, 3vw, 1rem);
-        }
+        .credito-card:hover { transform: rotate(-2deg); box-shadow: 8px 8px 0px var(--cor-memoria); }
+        .credito-card h3 { font-family: 'Playfair Display', serif; color: var(--cor-memoria); margin-bottom: 1rem; }
 
         .credito-info {
-            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            font-size: 0.9rem;
             line-height: 1.5;
         }
 
         .instagram-link {
-            color: var(--cor-destaque); 
-            text-decoration: none; 
-            font-weight: 600;
-            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            color: var(--cor-destaque); text-decoration: none; font-weight: 600;
         }
-
         .instagram-link:hover { text-decoration: underline; }
 
-        /* REFERÊNCIAS MOBILE */
-        .referencias-list { 
-            background: white; 
-            padding: clamp(1.5rem, 4vw, 3rem); 
-            border: 2px solid var(--cor-terra); 
-            position: relative; 
-        }
-
+        /* REFERÊNCIAS */
+        .referencias-list { background: white; padding: 3rem; border: 2px solid var(--cor-terra); position: relative; }
         .referencias-list::before {
-            content: "REFERÊNCIAS"; 
-            position: absolute; 
-            top: -12px; 
-            left: 20px;
-            background: var(--cor-fundo); 
-            padding: 0 1rem;
-            font-weight: 600; 
-            color: var(--cor-destaque);
-            font-size: clamp(0.7rem, 2.5vw, 0.8rem);
+            content: "REFERÊNCIAS"; position: absolute; top: -12px; left: 20px;
+            background: var(--cor-fundo); padding: 0 1rem;
+            font-weight: 600; color: var(--cor-destaque);
         }
-
-        .referencia-item { 
-            padding: 1rem 0; 
-            border-bottom: 1px solid #E8D5C4; 
-        }
-
+        .referencia-item { padding: 1rem 0; border-bottom: 1px solid #E8D5C4; }
         .referencia-item:last-child { border-bottom: none; }
 
-        /* FOOTER MOBILE */
+        /* FOOTER */
         footer {
-            background: var(--cor-memoria); 
-            color: white; 
-            padding: clamp(2rem, 5vw, 3rem) 1rem;
-            text-align: center; 
-            position: relative;
+            background: var(--cor-memoria); color: white; padding: 3rem 2rem;
+            text-align: center; position: relative;
         }
-
         footer::before {
-            content: ""; 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            right: 0;
-            height: 3px; 
-            background: linear-gradient(90deg, var(--cor-destaque), var(--cor-terra));
+            content: ""; position: absolute; top: 0; left: 0; right: 0;
+            height: 3px; background: linear-gradient(90deg, var(--cor-destaque), var(--cor-terra));
         }
+        .footer-content { max-width: 600px; margin: 0 auto; }
+        .footer-content p { margin: 0.5rem 0; opacity: 0.9; }
 
-        .footer-content { 
-            max-width: 600px; 
-            margin: 0 auto; 
-        }
-
-        .footer-content p { 
-            margin: 0.5rem 0; 
-            opacity: 0.9;
-            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
-        }
-
-        .logos-container {
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            gap: clamp(1rem, 4vw, 2.5rem); 
-            margin-bottom: 1.5rem; 
-            flex-wrap: wrap;
-        }
-
-        .logo-img {
-            height: clamp(40px, 10vw, 54px); 
-            max-width: clamp(80px, 20vw, 120px); 
-            object-fit: contain; 
-            background: #fff; 
-            border-radius: 6px; 
-            padding: 4px;
-        }
-
-        /* BOTÃO VOLTAR AO TOPO MOBILE */
-        #btn-topo {
-            position: fixed; 
-            bottom: clamp(20px, 6vw, 32px); 
-            right: clamp(20px, 6vw, 32px); 
-            z-index: 9999; 
-            background: var(--cor-destaque); 
-            color: #fff; 
-            border: none; 
-            border-radius: 50%; 
-            width: clamp(44px, 12vw, 54px); 
-            height: clamp(44px, 12vw, 54px); 
-            font-size: clamp(1.5rem, 6vw, 2rem); 
-            box-shadow: 0 4px 16px rgba(0,0,0,0.18); 
-            cursor: pointer; 
-            display: none; 
-            transition: all 0.3s;
-        }
-
-        #btn-topo:hover {
-            transform: scale(1.1);
-            background: var(--cor-terra);
-        }
-
-        /* RESPONSIVIDADE AVANÇADA */
+        /* RESPONSIVIDADE */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
+            .hero h1 { 
+                font-size: 2.2rem;
+            }
+            .sobre-content { grid-template-columns: 1fr; }
+            nav ul { flex-direction: column; gap: 1rem; }
+            .header-content { flex-direction: column; gap: 1rem; }
+            
+            .titulo-dissertacao {
+                font-size: 1.1rem;
+            }
+            
+            .btn-mapa {
+                padding: 15px 30px;
+                font-size: 1.1rem;
             }
 
-            nav ul {
-                justify-content: center;
-            }
-
-            .hero-title-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .sobre-content {
-                grid-template-columns: 1fr;
-            }
-
-            .autor-card {
-                order: -1;
+            .hero {
+                padding: 6rem 0 3rem 0;
             }
         }
 
         @media (max-width: 480px) {
-            .popup-content {
-                padding: 1.5rem;
-                margin: 1rem;
-            }
-
-            .mapa-container {
-                margin: 1.5rem auto;
-                padding: 1.5rem 1rem;
-            }
-
-            .videos-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .creditos-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .hero {
-                padding: 5rem 0.5rem 1rem 0.5rem;
-            }
-
-            .section {
-                padding: 2rem 0.5rem;
-            }
-
-            nav ul {
-                gap: 0.8rem;
-            }
-
-            nav a {
-                font-size: 0.75rem;
+            .hero h1 {
+                font-size: 2rem;
             }
         }
 
@@ -518,23 +291,7 @@
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        .section { 
-            animation: surgir 0.8s ease-out; 
-        }
-
-        /* MELHORIAS DE USABILIDADE MOBILE */
-        @media (hover: none) {
-            .video-item:hover,
-            .credito-card:hover,
-            .btn-mapa:hover {
-                transform: none;
-            }
-            
-            .btn-mapa:active {
-                transform: scale(0.98);
-            }
-        }
+        .section { animation: surgir 0.8s ease-out; }
     </style>
 </head>
 <body>
@@ -571,9 +328,9 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-title-container">
-                <h1>GUERRILHA DO ARAGUAIA</h1>
-                <span class="subtitle">Mapa interativo como proposta didático-pedagógica do Mestrado Profissional em Ensino de História</span>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.2rem; margin-bottom: 2.5rem;">
+                <h1 style="margin-bottom: 0;">GUERRILHA DO ARAGUAIA</h1>
+                <span class="subtitle" style="font-size: 0.92rem; color: #555; margin-bottom: 0; font-weight: 400; line-height: 1.1; max-width: 320px;">Mapa interativo como proposta didático-pedagógica do Mestrado Profissional em Ensino de História</span>
             </div>
             <div class="mapa-container">
                 <div class="icone-mapa">🗺️</div>
@@ -595,14 +352,14 @@
         <div class="container">
             <div class="section-header"><h2>SOBRE O MAPA</h2></div>
             <div class="sobre-content">
+                <div class="sobre-text sobre-justificado">
+                    <p>Este mapa interativo é a proposta didático-pedagógica final da pesquisa de mestrado desenvolvida por Jorge Kitchell Pinheiro Lima no âmbito do Mestrado Profissional em Ensino de História (PROFHistoria).</p>
+                    <p> A proposta do mapa interativo nasce da compreensão de que o ensino de História precisa dialogar com metodologias inovadoras, capazes de aproximar os alunos dos conteúdos a partir de suas próprias realidades e referências locais. Por meio da tecnologia, o mapa permitirá que estudantes, professores e membros da comunidade possam visualizar, explorar e compreender os diferentes locais que foram palco dos acontecimentos ligados à guerrilha e à repressão militar, conectando os fatos históricos às paisagens, aos espaços e às memórias vivas da região.</p>
+                    <p>Utilizando o QGIS para desenvolvimento e qgis2web para publicação, o mapa apresenta locais significativos e informações históricas contextualizadas.</p>
+                </div>
                 <div class="autor-card">
                     <h3>JORGE KITCHELL PINHEIRO LIMA</h3>
                     <p><strong>Mestrando - PROFHistoria</strong></p>
-                </div>
-                <div class="sobre-text">
-                    <p>Este mapa interativo é a proposta didático-pedagógica final da pesquisa de mestrado desenvolvida por Jorge Kitchell Pinheiro Lima no âmbito do Mestrado Profissional em Ensino de História (PROFHistoria).</p>
-                    <p>A proposta do mapa interativo nasce da compreensão de que o ensino de História precisa dialogar com metodologias inovadoras, capazes de aproximar os alunos dos conteúdos a partir de suas próprias realidades e referências locais. Por meio da tecnologia, o mapa permitirá que estudantes, professores e membros da comunidade possam visualizar, explorar e compreender os diferentes locais que foram palco dos acontecimentos ligados à guerrilha e à repressão militar, conectando os fatos históricos às paisagens, aos espaços e às memórias vivas da região.</p>
-                    <p>Utilizando o QGIS para desenvolvimento e qgis2web para publicação, o mapa apresenta locais significativos e informações históricas contextualizadas.</p>
                 </div>
             </div>
         </div>
@@ -612,7 +369,7 @@
     <section id="contexto" class="section">
         <div class="container">
             <div class="section-header"><h2>CONTEXTO HISTÓRICO</h2></div>
-            <div class="sobre-text">
+            <div class="sobre-text contexto-justificado">
                 <p>A Guerrilha do Araguaia surgiu no final da década de 1960, em meio ao endurecimento do regime militar instaurado após o golpe de 1964. Nesse cenário, o Partido Comunista do Brasil (PCdoB), criado em 1962 a partir de uma cisão do PCB, defendia que não seria possível alcançar o socialismo no país por vias pacíficas. Para seus militantes, diante da repressão política e da influência do imperialismo norte-americano, a resistência armada seria inevitável.</p>
                 <p>A região escolhida para o foco guerrilheiro foi o sudeste do Pará, às margens do rio Araguaia, marcada por pobreza, isolamento do Estado e intensos conflitos fundiários. A partir de 1966, militantes do PCdoB passaram a viver entre camponeses, buscando apoio por meio de atividades comunitárias, como a abertura de escolas e pequenos comércios. O objetivo era preparar uma guerra popular prolongada, inspirada no modelo chinês, na qual a guerrilha cumpriria o papel inicial de organização das massas rurais.</p>
                 <p>Com o acirramento da ditadura após o AI-5, em 1968, o projeto se consolidou, mas, em 1972, os serviços de inteligência do Exército descobriram a presença dos militantes na região. Entre 1972 e 1974, as Forças Armadas desencadearam grandes operações — como Papagaio, Sucuri e Marajoara — que envolveram milhares de soldados contra pouco mais de 70 guerrilheiros. A repressão utilizou métodos de guerra contrainsurgente, como infiltração, propaganda, tortura sistemática, execuções sumárias e ocultação de cadáveres.</p>
@@ -658,6 +415,7 @@
                 <div class="video-item">
                     <iframe src="https://www.youtube.com/embed/QUsGAQ7nNn0" allowfullscreen></iframe>
                     <div class="video-info"><h3>A História de Brejo Grande do Araguaia</h3><p>Documentário educativo</p></div>
+                </div>
                 </div>
             </div>
         </div>
@@ -714,10 +472,10 @@
     <!-- FOOTER -->
     <footer>
         <div class="footer-content">
-            <div class="logos-container">
-                <img src="logos/UFNT.png" alt="UFNT" class="logo-img">
-                <img src="logos/PROFHISTORIA.png" alt="PROFHISTORIA" class="logo-img">
-                <img src="logos/LAPMAP.png" alt="LAPMAP" class="logo-img">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 2.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                <img src="logos/UFNT.png" alt="UFNT" style="height: 54px; max-width: 120px; object-fit: contain; background: #fff; border-radius: 6px; padding: 4px;">
+                <img src="logos/PROFHISTORIA.png" alt="PROFHISTORIA" style="height: 54px; max-width: 120px; object-fit: contain; background: #fff; border-radius: 6px; padding: 4px;">
+                <img src="logos/LAPMAP.png" alt="LAPMAP" style="height: 54px; max-width: 120px; object-fit: contain; background: #fff; border-radius: 6px; padding: 4px;">
             </div>
             <p><strong>Mapa Interativo - Guerrilha do Araguaia</strong></p>
             <p>Proposta didático-pedagógica - Mestrado Profissional em Ensino de História</p>
@@ -726,7 +484,7 @@
     </footer>
 
     <!-- Botão Voltar ao Topo -->
-    <button id="btn-topo" title="Voltar ao topo">↑</button>
+    <button id="btn-topo" title="Voltar ao topo" style="position: fixed; bottom: 32px; right: 32px; z-index: 9999; background: var(--cor-destaque); color: #fff; border: none; border-radius: 50%; width: 54px; height: 54px; font-size: 2rem; box-shadow: 0 4px 16px rgba(0,0,0,0.18); cursor: pointer; display: none; transition: background 0.2s;">&#8679;</button>
 
     <script>
         // Botão Voltar ao Topo
@@ -741,7 +499,6 @@
         btnTopo.addEventListener('click', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-        
         function fecharPopup() {
             document.getElementById('popup-inicial').style.display = 'none';
         }
@@ -772,11 +529,6 @@
             section.style.transition = "all 0.8s ease-out";
             observer.observe(section);
         });
-
-        // Melhoria de performance para mobile
-        if ('ontouchstart' in window) {
-            document.body.classList.add('touch-device');
-        }
     </script>
 </body>
 </html>
