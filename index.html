@@ -87,7 +87,7 @@
         }
         nav a:hover::after { width: 100%; }
 
-        /* HERO - AJUSTADO */
+        /* HERO */
         .hero {
             min-height: 100vh;
             display: flex; align-items: center;
@@ -122,7 +122,7 @@
             color: #444;
         }
 
-        /* CONTAINER DO BOTÃO DO MAPA - MAIS CLEAN */
+        /* CONTAINER DO BOTÃO DO MAPA */
         .mapa-container {
             margin: 3rem auto;
             max-width: 600px;
@@ -190,8 +190,7 @@
         /* LAYOUT */
         .sobre-content { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
         .sobre-text { font-size: 1.1rem; line-height: 1.8; }
-    .sobre-text.contexto-justificado, .sobre-text.sobre-justificado { text-align: justify; }
-    .contexto-justificado { text-align: justify; }
+        .sobre-text.contexto-justificado, .sobre-text.sobre-justificado { text-align: justify; }
         .sobre-text p { margin-bottom: 1.5rem; }
 
         .autor-card {
@@ -224,15 +223,8 @@
         }
         .credito-card:hover { transform: rotate(-2deg); box-shadow: 8px 8px 0px var(--cor-memoria); }
         .credito-card h3 { font-family: 'Playfair Display', serif; color: var(--cor-memoria); margin-bottom: 1rem; }
-
-        .credito-info {
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .instagram-link {
-            color: var(--cor-destaque); text-decoration: none; font-weight: 600;
-        }
+        .credito-info { font-size: 0.9rem; line-height: 1.5; }
+        .instagram-link { color: var(--cor-destaque); text-decoration: none; font-weight: 600; }
         .instagram-link:hover { text-decoration: underline; }
 
         /* REFERÊNCIAS */
@@ -244,6 +236,8 @@
         }
         .referencia-item { padding: 1rem 0; border-bottom: 1px solid #E8D5C4; }
         .referencia-item:last-child { border-bottom: none; }
+        .referencia-item ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+        .referencia-item li { margin-bottom: 0.5rem; }
 
         /* FOOTER */
         footer {
@@ -259,31 +253,16 @@
 
         /* RESPONSIVIDADE */
         @media (max-width: 768px) {
-            .hero h1 { 
-                font-size: 2.2rem;
-            }
+            .hero h1 { font-size: 2.2rem; }
             .sobre-content { grid-template-columns: 1fr; }
             nav ul { flex-direction: column; gap: 1rem; }
             .header-content { flex-direction: column; gap: 1rem; }
-            
-            .titulo-dissertacao {
-                font-size: 1.1rem;
-            }
-            
-            .btn-mapa {
-                padding: 15px 30px;
-                font-size: 1.1rem;
-            }
-
-            .hero {
-                padding: 6rem 0 3rem 0;
-            }
+            .titulo-dissertacao { font-size: 1.1rem; }
+            .btn-mapa { padding: 15px 30px; font-size: 1.1rem; }
+            .hero { padding: 6rem 0 3rem 0; }
         }
-
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
+            .hero h1 { font-size: 2rem; }
         }
 
         /* ANIMAÇÕES */
@@ -335,11 +314,9 @@
             <div class="mapa-container">
                 <div class="icone-mapa">🗺️</div>
                 <h3>Explore o Mapa Interativo</h3>
-                
                 <a href="mapa-qgis.html" target="_blank" class="btn-mapa">
                     ABRIR MAPA
                 </a>
-                
                 <div class="texto-mapa">
                     Visualização completa em uma nova janela
                 </div>
@@ -416,7 +393,6 @@
                     <iframe src="https://www.youtube.com/embed/QUsGAQ7nNn0" allowfullscreen></iframe>
                     <div class="video-info"><h3>A História de Brejo Grande do Araguaia</h3><p>Documentário educativo</p></div>
                 </div>
-                </div>
             </div>
         </div>
     </section>
@@ -465,6 +441,19 @@
                 <div class="referencia-item">
                     <p><strong>Referências Completas:</strong> Disponíveis na dissertação completa defendida no programa de Mestrado Profissional em Ensino de História.</p>
                 </div>
+                <div class="referencia-item">
+                    <p><strong>Referências dos Vídeos:</strong></p>
+                    <ul>
+                        <li>Ativa Biografia – Documentário sobre a Guerrilha do Araguaia. YouTube: <a href="https://www.youtube.com/watch?v=sX6mjSmuqrU" target="_blank">link</a></li>
+                        <li>TV Grabois – Análise histórica do conflito. YouTube: <a href="https://www.youtube.com/watch?v=Z1JTgo3ZGuI" target="_blank">link</a></li>
+                        <li>TV Grabois – Memórias da Guerrilha. YouTube: <a href="https://www.youtube.com/watch?v=pIlL7O1XliY" target="_blank">link</a></li>
+                        <li>TV Grabois – Depoimentos e histórias. YouTube: <a href="https://www.youtube.com/watch?v=mPprWbGaGmo" target="_blank">link</a></li>
+                        <li>Memorial da Democracia – Documentário histórico. YouTube: <a href="https://www.youtube.com/watch?v=wLkmsrfIGZU" target="_blank">link</a></li>
+                        <li>Memorial da Democracia – Análise do contexto político. YouTube: <a href="https://www.youtube.com/watch?v=txyr_fgZSac" target="_blank">link</a></li>
+                        <li>Canal Futura – Documentário educativo. YouTube: <a href="https://www.youtube.com/watch?v=5eHU-Wk8B8M" target="_blank">link</a></li>
+                        <li>A História de Brejo Grande do Araguaia – Documentário educativo. YouTube: <a href="https://www.youtube.com/watch?v=QUsGAQ7nNn0" target="_blank">link</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -479,56 +468,14 @@
             </div>
             <p><strong>Mapa Interativo - Guerrilha do Araguaia</strong></p>
             <p>Proposta didático-pedagógica - Mestrado Profissional em Ensino de História</p>
-            <p>Desenvolvido por Jenifer R. Silva | <a href="https://www.instagram.com/labmap.s/" target="_blank" style="color: white; text-decoration: underline;">@labmap.s</a> <span style="margin-left: 18px; color: #eee; font-size: 1rem;">&copy; 2025</span></p>
+            <p>Desenvolvido por Jenifer R. Silva | <a href="https://www.instagram.com/labmap.s/" target="_blank" style="color: white; text-decoration: underline;">@labmap.s</a> <span style="opacity: 0.8;">&copy; 2025</span></p>
         </div>
     </footer>
 
-    <!-- Botão Voltar ao Topo -->
-    <button id="btn-topo" title="Voltar ao topo" style="position: fixed; bottom: 32px; right: 32px; z-index: 9999; background: var(--cor-destaque); color: #fff; border: none; border-radius: 50%; width: 54px; height: 54px; font-size: 2rem; box-shadow: 0 4px 16px rgba(0,0,0,0.18); cursor: pointer; display: none; transition: background 0.2s;">&#8679;</button>
-
     <script>
-        // Botão Voltar ao Topo
-        const btnTopo = document.getElementById('btn-topo');
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                btnTopo.style.display = 'block';
-            } else {
-                btnTopo.style.display = 'none';
-            }
-        });
-        btnTopo.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
         function fecharPopup() {
             document.getElementById('popup-inicial').style.display = 'none';
         }
-
-        // Scroll suave
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-
-        // Animações
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-                }
-            });
-        });
-
-        document.querySelectorAll('.section').forEach((section) => {
-            section.style.opacity = "0";
-            section.style.transform = "translateY(30px)";
-            section.style.transition = "all 0.8s ease-out";
-            observer.observe(section);
-        });
     </script>
 </body>
 </html>
