@@ -87,7 +87,7 @@
         }
         nav a:hover::after { width: 100%; }
 
-        /* HERO - AJUSTADO */
+        /* HERO */
         .hero {
             min-height: 100vh;
             display: flex; align-items: center;
@@ -122,7 +122,6 @@
             color: #444;
         }
 
-        /* CONTAINER DO BOTÃO DO MAPA - MAIS CLEAN */
         .mapa-container {
             margin: 3rem auto;
             max-width: 600px;
@@ -161,20 +160,6 @@
             background: var(--cor-terra);
         }
 
-        .icone-mapa {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .texto-mapa {
-            font-size: 0.9rem;
-            color: var(--cor-memoria);
-            margin-top: 1rem;
-            line-height: 1.5;
-            opacity: 0.8;
-        }
-
         /* SEÇÕES */
         .section { padding: 6rem 2rem; position: relative; }
         .section:nth-child(even) { background: linear-gradient(45deg, #E8D5C4 0%, var(--cor-fundo) 100%); }
@@ -187,348 +172,67 @@
             border-bottom: 3px solid var(--cor-destaque); padding-bottom: 0.5rem;
         }
 
-        /* LAYOUT */
-        .sobre-content { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
-        .sobre-text { font-size: 1.1rem; line-height: 1.8; }
-    .sobre-text.contexto-justificado, .sobre-text.sobre-justificado { text-align: justify; }
-    .contexto-justificado { text-align: justify; }
-        .sobre-text p { margin-bottom: 1.5rem; }
-
-        .autor-card {
-            background: white; padding: 2rem; border: 2px solid var(--cor-terra);
-            box-shadow: 8px 8px 0px var(--cor-memoria); position: relative;
-        }
-
-        .autor-card::before {
-            content: "PESQUISADOR"; position: absolute; top: -12px; left: 20px;
-            background: var(--cor-fundo); padding: 0 1rem;
-            font-size: 0.8rem; font-weight: 600; color: var(--cor-destaque);
-        }
-
-        /* VÍDEOS */
-        .videos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-        .video-item {
-            background: white; border: 2px solid var(--cor-terra);
-            transition: all 0.3s; position: relative;
-        }
-        .video-item:hover { transform: translateY(-10px); box-shadow: 10px 10px 0px var(--cor-memoria); }
-        .video-item iframe { width: 100%; height: 200px; border: none; }
-        .video-info { padding: 1.5rem; }
-        .video-info h3 { font-family: 'Playfair Display', serif; color: var(--cor-memoria); margin-bottom: 0.5rem; }
-
-        /* CRÉDITOS */
-        .creditos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .credito-card {
-            background: white; padding: 2rem; border: 2px solid var(--cor-terra);
-            text-align: center; transition: transform 0.3s; position: relative;
-        }
-        .credito-card:hover { transform: rotate(-2deg); box-shadow: 8px 8px 0px var(--cor-memoria); }
-        .credito-card h3 { font-family: 'Playfair Display', serif; color: var(--cor-memoria); margin-bottom: 1rem; }
-
-        .credito-info {
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .instagram-link {
-            color: var(--cor-destaque); text-decoration: none; font-weight: 600;
-        }
-        .instagram-link:hover { text-decoration: underline; }
-
-        /* REFERÊNCIAS */
         .referencias-list { background: white; padding: 3rem; border: 2px solid var(--cor-terra); position: relative; }
         .referencias-list::before {
             content: "REFERÊNCIAS"; position: absolute; top: -12px; left: 20px;
             background: var(--cor-fundo); padding: 0 1rem;
             font-weight: 600; color: var(--cor-destaque);
         }
-        .referencia-item { padding: 1rem 0; border-bottom: 1px solid #E8D5C4; }
+        .referencia-item { padding: 1rem 0; border-bottom: 1px solid #E8D5C4; text-align: justify; }
         .referencia-item:last-child { border-bottom: none; }
 
-        /* FOOTER */
         footer {
             background: var(--cor-memoria); color: white; padding: 3rem 2rem;
             text-align: center; position: relative;
         }
+
         footer::before {
             content: ""; position: absolute; top: 0; left: 0; right: 0;
             height: 3px; background: linear-gradient(90deg, var(--cor-destaque), var(--cor-terra));
         }
-        .footer-content { max-width: 600px; margin: 0 auto; }
-        .footer-content p { margin: 0.5rem 0; opacity: 0.9; }
-
-        /* RESPONSIVIDADE */
-        @media (max-width: 768px) {
-            .hero h1 { 
-                font-size: 2.2rem;
-            }
-            .sobre-content { grid-template-columns: 1fr; }
-            nav ul { flex-direction: column; gap: 1rem; }
-            .header-content { flex-direction: column; gap: 1rem; }
-            
-            .titulo-dissertacao {
-                font-size: 1.1rem;
-            }
-            
-            .btn-mapa {
-                padding: 15px 30px;
-                font-size: 1.1rem;
-            }
-
-            .hero {
-                padding: 6rem 0 3rem 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-        }
-
-        /* ANIMAÇÕES */
-        @keyframes surgir {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .section { animation: surgir 0.8s ease-out; }
     </style>
 </head>
 <body>
-    <!-- POP-UP -->
+    <!-- POPUP -->
     <div id="popup-inicial">
         <div class="popup-content">
             <div class="titulo-dissertacao">
-                ENSINO DE HISTÓRIA E AS MEMÓRIAS DA GUERRILHA DO ARAGUAIA: PERCEPÇÕES DE ALUNOS E PROFESSORES DA ESCOLA ESTADUAL PROFESSOR LÍCIO SOLHEIRO (BREJO GRANDE DO ARAGUAIA - PA)
+                ENSINO DE HISTÓRIA E AS MEMÓRIAS DA GUERRILHA DO ARAGUAIA:<br> PERCEPÇÕES DE ALUNOS E PROFESSORES DA ESCOLA ESTADUAL PROFESSOR LÍCIO SOLHEIRO (BREJO GRANDE DO ARAGUAIA - PA)
             </div>
-            <p><strong>Proposta didático-pedagógica - Mestrado Profissional em Ensino de História</strong></p>
             <p><strong>Autor:</strong> Jorge Kitchell Pinheiro Lima</p>
-            <p><strong>Orientador:</strong> Prof. Dr. Moisés Pereira da Silva</p>
-            <p><strong>Desenvolvimento do site e do mapa interativo:</strong> Jenifer R. Silva - <a href="https://www.instagram.com/labmap.s/" target="_blank" class="instagram-link">@labmap.s</a></p>
-            <button class="btn-acessar" onclick="fecharPopup()">ACESSAR MAPA INTERATIVO</button>
+            <p><strong>Mestrado Profissional em Ensino de História - PROFHistória</strong></p>
+            <p><strong>Desenvolvimento do site e mapa:</strong> Jenifer R. Silva - <a href="https://www.instagram.com/labmap.s/" target="_blank" class="instagram-link">labmap.s</a></p>
+            <button class="btn-acessar" onclick="fecharPopup()">Acessar o Mapa</button>
         </div>
     </div>
-
-    <!-- HEADER -->
-    <header>
-        <div class="header-content">
-            <div class="logo">Memória Araguaia</div>
-            <nav>
-                <ul>
-                    <li><a href="#sobre">SOBRE O MAPA</a></li>
-                    <li><a href="#contexto">CONTEXTO HISTÓRICO</a></li>
-                    <li><a href="#videos">VÍDEOS</a></li>
-                    <li><a href="#autoria">AUTORIA</a></li>
-                    <li><a href="#referencias">REFERÊNCIAS</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-content">
-            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.2rem; margin-bottom: 2.5rem;">
-                <h1 style="margin-bottom: 0;">GUERRILHA DO ARAGUAIA</h1>
-                <span class="subtitle" style="font-size: 0.92rem; color: #555; margin-bottom: 0; font-weight: 400; line-height: 1.1; max-width: 320px;">Mapa interativo como proposta didático-pedagógica do Mestrado Profissional em Ensino de História</span>
-            </div>
-            <div class="mapa-container">
-                <div class="icone-mapa">🗺️</div>
-                <h3>Explore o Mapa Interativo</h3>
-                
-                <a href="mapa-qgis.html" target="_blank" class="btn-mapa">
-                    ABRIR MAPA
-                </a>
-                
-                <div class="texto-mapa">
-                    Visualização completa em uma nova janela
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SOBRE -->
-    <section id="sobre" class="section">
-        <div class="container">
-            <div class="section-header"><h2>SOBRE O MAPA</h2></div>
-            <div class="sobre-content">
-                <div class="sobre-text sobre-justificado">
-                    <p>Este mapa interativo é a proposta didático-pedagógica final da pesquisa de mestrado desenvolvida por Jorge Kitchell Pinheiro Lima no âmbito do Mestrado Profissional em Ensino de História (PROFHistoria).</p>
-                    <p> A proposta do mapa interativo nasce da compreensão de que o ensino de História precisa dialogar com metodologias inovadoras, capazes de aproximar os alunos dos conteúdos a partir de suas próprias realidades e referências locais. Por meio da tecnologia, o mapa permitirá que estudantes, professores e membros da comunidade possam visualizar, explorar e compreender os diferentes locais que foram palco dos acontecimentos ligados à guerrilha e à repressão militar, conectando os fatos históricos às paisagens, aos espaços e às memórias vivas da região.</p>
-                    <p>Utilizando o QGIS para desenvolvimento e qgis2web para publicação, o mapa apresenta locais significativos e informações históricas contextualizadas.</p>
-                </div>
-                <div class="autor-card">
-                    <h3>JORGE KITCHELL PINHEIRO LIMA</h3>
-                    <p><strong>Mestrando - PROFHistoria</strong></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTEXTO -->
-    <section id="contexto" class="section">
-        <div class="container">
-            <div class="section-header"><h2>CONTEXTO HISTÓRICO</h2></div>
-            <div class="sobre-text contexto-justificado">
-                <p>A Guerrilha do Araguaia surgiu no final da década de 1960, em meio ao endurecimento do regime militar instaurado após o golpe de 1964. Nesse cenário, o Partido Comunista do Brasil (PCdoB), criado em 1962 a partir de uma cisão do PCB, defendia que não seria possível alcançar o socialismo no país por vias pacíficas. Para seus militantes, diante da repressão política e da influência do imperialismo norte-americano, a resistência armada seria inevitável.</p>
-                <p>A região escolhida para o foco guerrilheiro foi o sudeste do Pará, às margens do rio Araguaia, marcada por pobreza, isolamento do Estado e intensos conflitos fundiários. A partir de 1966, militantes do PCdoB passaram a viver entre camponeses, buscando apoio por meio de atividades comunitárias, como a abertura de escolas e pequenos comércios. O objetivo era preparar uma guerra popular prolongada, inspirada no modelo chinês, na qual a guerrilha cumpriria o papel inicial de organização das massas rurais.</p>
-                <p>Com o acirramento da ditadura após o AI-5, em 1968, o projeto se consolidou, mas, em 1972, os serviços de inteligência do Exército descobriram a presença dos militantes na região. Entre 1972 e 1974, as Forças Armadas desencadearam grandes operações — como Papagaio, Sucuri e Marajoara — que envolveram milhares de soldados contra pouco mais de 70 guerrilheiros. A repressão utilizou métodos de guerra contrainsurgente, como infiltração, propaganda, tortura sistemática, execuções sumárias e ocultação de cadáveres.</p>
-                <p>A guerrilha foi completamente derrotada em 1974, deixando a maioria de seus integrantes mortos ou desaparecidos. Além dos combatentes, centenas de camponeses foram presos, torturados e perseguidos sob acusação de colaborar com o movimento. Apesar da vitória militar, o episódio evidenciou a violência de Estado, revelando práticas arbitrárias e brutais que marcaram profundamente a população local.</p>
-                <p>Na memória nacional, a Guerrilha do Araguaia tornou-se símbolo tanto da resistência contra a ditadura quanto da violência repressiva. Durante décadas, o governo ocultou informações sobre os mortos e desaparecidos, negando acesso a documentos e aos locais de sepultamento. Apenas com a redemocratização, a luta de familiares e movimentos sociais trouxe o tema à tona, resultando na criação da Comissão Especial sobre Mortos e Desaparecidos Políticos (1995) e da Comissão Nacional da Verdade (2011-2014). Ainda hoje, muitos corpos não foram encontrados, e a Guerrilha do Araguaia permanece como um dos capítulos mais emblemáticos da disputa por memória, verdade e justiça no Brasil.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- VÍDEOS -->
-    <section id="videos" class="section">
-        <div class="container">
-            <div class="section-header"><h2>VÍDEOS DOCUMENTÁRIOS</h2></div>
-            <div class="videos-grid">
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/sX6mjSmuqrU" allowfullscreen></iframe>
-                    <div class="video-info"><h3>Ativa Biografia</h3><p>Documentário sobre a Guerrilha do Araguaia</p></div>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/Z1JTgo3ZGuI" allowfullscreen></iframe>
-                    <div class="video-info"><h3>TV Grabois</h3><p>Análise histórica do conflito</p></div>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/pIlL7O1XliY" allowfullscreen></iframe>
-                    <div class="video-info"><h3>TV Grabois</h3><p>Memórias da Guerrilha</p></div>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/mPprWbGaGmo" allowfullscreen></iframe>
-                    <div class="video-info"><h3>TV Grabois</h3><p>Depoimentos e histórias</p></div>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/wLkmsrfIGZU" allowfullscreen></iframe>
-                    <div class="video-info"><h3>Memorial da Democracia</h3><p>Documentário histórico</p></div>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/txyr_fgZSac" allowfullscreen></iframe>
-                    <div class="video-info"><h3>Memorial da Democracia</h3><p>Análise do contexto político</p></div>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/5eHU-Wk8B8M" allowfullscreen></iframe>
-                    <div class="video-info"><h3>Canal Futura</h3><p>Documentário educativo</p></div>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/QUsGAQ7nNn0" allowfullscreen></iframe>
-                    <div class="video-info"><h3>A História de Brejo Grande do Araguaia</h3><p>Documentário educativo</p></div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AUTORIA -->
-    <section id="autoria" class="section">
-        <div class="container">
-            <div class="section-header"><h2>AUTORIA E CRÉDITOS</h2></div>
-            <div class="creditos-grid">
-                <div class="credito-card">
-                    <h3>DESENVOLVIMENTO DO SITE E MAPA</h3>
-                    <div class="credito-info">
-                        <p><strong>Jenifer R. Silva</strong></p>
-                        <p><a href="https://www.instagram.com/labmap.s/" target="_blank" class="instagram-link">@labmap.s</a></p>
-                    </div>
-                </div>
-                <div class="credito-card">
-                    <h3>PESQUISA E CONTEÚDO</h3>
-                    <div class="credito-info">
-                        <p><strong>Jorge Kitchell Pinheiro Lima</strong></p>
-                        <p>Mestrando - <a href="https://www.instagram.com/profhistoria.n" target="_blank" class="instagram-link">PROFHistoria</a></p>
-                    </div>
-                </div>
-                <div class="credito-card">
-                    <h3>ORIENTAÇÃO</h3>
-                    <div class="credito-info">
-                        <p><strong>Prof. Dr. Moisés Pereira da Silva</strong></p>
-                        <p>Professor adjunto da Universidade Federal do Tocantins (UFT)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- REFERÊNCIAS -->
     <section id="referencias" class="section">
         <div class="container">
-            <div class="section-header"><h2>REFERÊNCIAS</h2></div>
+            <div class="section-header"><h2>REFERÊNCIAS DOS VÍDEOS</h2></div>
             <div class="referencias-list">
-                <div class="referencia-item">
-                    <p><strong>Fontes Documentais:</strong> Todos os dados e referências para construção deste mapa foram disponibilizados pelo mestrando Jorge Kitchell Pinheiro Lima.</p>
-                </div>
-                <div class="referencia-item">
-                    <p><strong>Base Cartográfica:</strong> Desenvolvida através do QGIS com integração via qgis2web para publicação web.</p>
-                </div>
-                <div class="referencia-item">
-                    <p><strong>Referências Completas:</strong> Disponíveis na dissertação completa defendida no programa de Mestrado Profissional em Ensino de História.</p>
-                </div>
+                <div class="referencia-item">TV UFG; CANAL FUTURA. <strong>Romualdo Pessoa: historiador comenta os conflitos da Guerrilha do Araguaia.</strong> YouTube, Goiânia: TV UFG / Canal Futura, 2021. Disponível em: <a href="https://www.youtube.com/watch?v=5eHU-Wk8B8M&t=38s" target="_blank">link</a>. Acesso em: 14 out. 2025.</div>
+                <div class="referencia-item">TV GRABOIS. <strong>49 anos da Guerrilha do Araguaia.</strong> YouTube, São Paulo: TV Grabois, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=Z1JTgo3ZGuI" target="_blank">link</a>. Acesso em: 14 out. 2025.</div>
+                <div class="referencia-item">TV GRABOIS. <strong>50 anos do desaparecimento de Maurício Grabois.</strong> YouTube, São Paulo: TV Grabois, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=pIlL7O1XliY" target="_blank">link</a>. Acesso em: 14 out. 2025.</div>
+                <div class="referencia-item">TV GRABOIS. <strong>João Amazonas Vive! 23 anos sem o gigante do comunismo brasileiro.</strong> YouTube, São Paulo: TV Grabois, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=mPprWbGaGmo" target="_blank">link</a>. Acesso em: 14 out. 2025.</div>
+                <div class="referencia-item">FERNANDES, Vandré. <strong>Camponeses do Araguaia – A Guerrilha vista por dentro.</strong> YouTube, Brasília: Memorial da Democracia, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=wLkmsrfIGZU&t=2s" target="_blank">link</a>. Acesso em: 14 out. 2025.</div>
+                <div class="referencia-item">FERNANDES, Vandré. <strong>Camponeses do Araguaia – A Guerrilha vista por dentro.</strong> YouTube, Brasília: Memorial da Democracia, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=txyr_fgZSac" target="_blank">link</a>. Acesso em: 14 out. 2025.</div>
+                <div class="referencia-item">PINHEIRO LIMA, Jorge Kitchell. <strong>A história de Brejo Grande do Araguaia.</strong> YouTube, Brejo Grande do Araguaia: Jorge Kitchell Pinheiro Lima, 2025. Disponível em: <a href="https://www.youtube.com/watch?v=QUsGAQ7nNn0&t=1s" target="_blank">link</a>. Acesso em: 14 out. 2025.</div>
+                <div class="referencia-item">ATIVA BIOGRAFIA. <strong>Quem foi o Guerrilheiro Osvaldão da Guerrilha do Araguaia?</strong> YouTube, 1 jan. 2025. Disponível em: <a href="https://www.youtube.com/watch?v=sX6mjSmuqrU&t=6s" target="_blank">link</a>. Acesso em: 14 out. 2025.</div>
+                <div class="referencia-item">MORAIS, Taís; SILVA, Eumano. <strong>Operação Araguaia: os arquivos secretos da guerrilha.</strong> São Paulo: Geração Editorial, 2005.</div>
+                <div class="referencia-item">O PLACEBO. <strong>Dinalva Oliveira Teixeira, a guerrilheira que enfrentou a ditadura militar.</strong> YouTube, 27 fev. 2022. Disponível em: <a href="https://www.youtube.com/watch?time_continue=6&v=sX6mjSmuqrU" target="_blank">link</a>. Acesso em: 15 out. 2025.</div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
-        <div class="footer-content">
-            <div style="display: flex; justify-content: center; align-items: center; gap: 2.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-                <img src="logos/UFNT.png" alt="UFNT" style="height: 54px; max-width: 120px; object-fit: contain; background: #fff; border-radius: 6px; padding: 4px;">
-                <img src="logos/PROFHISTORIA.png" alt="PROFHISTORIA" style="height: 54px; max-width: 120px; object-fit: contain; background: #fff; border-radius: 6px; padding: 4px;">
-                <img src="logos/LAPMAP.png" alt="LAPMAP" style="height: 54px; max-width: 120px; object-fit: contain; background: #fff; border-radius: 6px; padding: 4px;">
-            </div>
-            <p><strong>Mapa Interativo - Guerrilha do Araguaia</strong></p>
-            <p>Proposta didático-pedagógica - Mestrado Profissional em Ensino de História</p>
-            <p>Desenvolvido por Jenifer R. Silva | <a href="https://www.instagram.com/labmap.s/" target="_blank" style="color: white; text-decoration: underline;">@labmap.s</a> <span style="margin-left: 18px; color: #eee; font-size: 1rem;">&copy; 2025</span></p>
-        </div>
+        <p>© 2025 - Jenifer R. Silva | <a href="https://www.instagram.com/labmap.s/" style="color:white;text-decoration:underline;">labmap.s</a></p>
     </footer>
 
-    <!-- Botão Voltar ao Topo -->
-    <button id="btn-topo" title="Voltar ao topo" style="position: fixed; bottom: 32px; right: 32px; z-index: 9999; background: var(--cor-destaque); color: #fff; border: none; border-radius: 50%; width: 54px; height: 54px; font-size: 2rem; box-shadow: 0 4px 16px rgba(0,0,0,0.18); cursor: pointer; display: none; transition: background 0.2s;">&#8679;</button>
-
     <script>
-        // Botão Voltar ao Topo
-        const btnTopo = document.getElementById('btn-topo');
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                btnTopo.style.display = 'block';
-            } else {
-                btnTopo.style.display = 'none';
-            }
-        });
-        btnTopo.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
         function fecharPopup() {
             document.getElementById('popup-inicial').style.display = 'none';
         }
-
-        // Scroll suave
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-
-        // Animações
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-                }
-            });
-        });
-
-        document.querySelectorAll('.section').forEach((section) => {
-            section.style.opacity = "0";
-            section.style.transform = "translateY(30px)";
-            section.style.transition = "all 0.8s ease-out";
-            observer.observe(section);
-        });
     </script>
 </body>
 </html>
