@@ -6,6 +6,7 @@
     <title>Mapa Interativo - Guerrilha do Araguaia</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
         :root {
             --cor-terra: #8B4513;
             --cor-memoria: #0d3e2a;
@@ -13,13 +14,16 @@
             --cor-texto: #2C2C2C;
             --cor-fundo: #FAF0E6;
         }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: 'Inter', sans-serif;
             background: var(--cor-fundo);
             color: var(--cor-texto);
             overflow-x: hidden;
         }
+
         /* POP-UP */
         #popup-inicial {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -27,6 +31,7 @@
             display: flex; justify-content: center; align-items: center;
             z-index: 1000;
         }
+
         .popup-content {
             background: var(--cor-fundo);
             padding: 3rem; max-width: 800px;
@@ -34,6 +39,7 @@
             box-shadow: 20px 20px 0px var(--cor-memoria);
             text-align: center;
         }
+
         .titulo-dissertacao {
             font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
@@ -41,28 +47,34 @@
             margin-bottom: 2rem;
             line-height: 1.4;
         }
+
         .btn-acessar {
             background: var(--cor-destaque); color: white;
             border: 2px solid var(--cor-texto); padding: 15px 40px;
             font-family: 'Playfair Display', serif; font-size: 1.1rem;
             margin-top: 2rem; cursor: pointer; transition: all 0.3s;
         }
+
         .btn-acessar:hover {
             transform: translateY(-3px); box-shadow: 5px 5px 0px var(--cor-texto);
         }
+
         /* HEADER */
         header {
             position: fixed; top: 0; width: 100%; background: var(--cor-fundo);
             z-index: 100; padding: 1.5rem 0; border-bottom: 3px solid var(--cor-terra);
         }
+
         .header-content {
             display: flex; justify-content: space-between; align-items: center;
             max-width: 1200px; margin: 0 auto; padding: 0 2rem;
         }
+
         .logo {
             font-family: 'Playfair Display', serif; font-size: 1.8rem;
             font-weight: 700; color: var(--cor-memoria);
         }
+
         nav ul { display: flex; list-style: none; gap: 2rem; }
         nav a {
             color: var(--cor-texto); text-decoration: none; font-weight: 600;
@@ -74,6 +86,7 @@
             transition: width 0.3s;
         }
         nav a:hover::after { width: 100%; }
+
         /* HERO */
         .hero {
             min-height: 100vh;
@@ -82,6 +95,7 @@
             background: linear-gradient(45deg, var(--cor-fundo) 0%, #E8D5C4 100%);
             padding: 8rem 0 4rem 0;
         }
+
         .hero-content { 
             text-align: center; 
             z-index: 2; 
@@ -89,6 +103,7 @@
             padding: 0 2rem;
             margin-top: 2rem;
         }
+
         .hero h1 {
             font-family: 'Playfair Display', serif; 
             font-size: 3.5rem;
@@ -96,6 +111,7 @@
             color: var(--cor-memoria);
             line-height: 1.1;
         }
+
         .hero .subtitle { 
             font-size: 1.05rem;
             margin-bottom: 2.2rem;
@@ -105,6 +121,8 @@
             margin-right: auto;
             color: #444;
         }
+
+        /* MAPA */
         .mapa-container {
             margin: 3rem auto;
             max-width: 600px;
@@ -114,6 +132,7 @@
             padding: 2.5rem 2rem;
             text-align: center;
         }
+
         .mapa-container::before {
             content: "MAPA INTERATIVO";
             position: absolute; top: -15px; left: 20px;
@@ -121,6 +140,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 0.9rem; color: var(--cor-terra);
         }
+
         .btn-mapa {
             background: var(--cor-destaque);
             color: white;
@@ -134,16 +154,19 @@
             text-decoration: none;
             margin: 1.5rem 0;
         }
+
         .btn-mapa:hover {
             transform: translateY(-5px);
             box-shadow: 8px 8px 0px var(--cor-memoria);
             background: var(--cor-terra);
         }
+
         .icone-mapa {
             font-size: 2.5rem;
             margin-bottom: 1rem;
             display: block;
         }
+
         .texto-mapa {
             font-size: 0.9rem;
             color: var(--cor-memoria);
@@ -151,27 +174,34 @@
             line-height: 1.5;
             opacity: 0.8;
         }
+
         /* SEÇÕES */
         .section { padding: 6rem 2rem; position: relative; }
         .section:nth-child(even) { background: linear-gradient(45deg, #E8D5C4 0%, var(--cor-fundo) 100%); }
         .container { max-width: 1000px; margin: 0 auto; }
+
         .section-header { text-align: center; margin-bottom: 4rem; }
         .section-header h2 {
             font-family: 'Playfair Display', serif; font-size: 2.5rem;
             color: var(--cor-memoria); display: inline-block;
             border-bottom: 3px solid var(--cor-destaque); padding-bottom: 0.5rem;
         }
+
+        /* LAYOUT */
         .sobre-content { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
         .sobre-text { font-size: 1.1rem; line-height: 1.8; text-align: justify; }
         .autor-card {
             background: white; padding: 2rem; border: 2px solid var(--cor-terra);
             box-shadow: 8px 8px 0px var(--cor-memoria); position: relative;
         }
+
         .autor-card::before {
             content: "PESQUISADOR"; position: absolute; top: -12px; left: 20px;
             background: var(--cor-fundo); padding: 0 1rem;
             font-size: 0.8rem; font-weight: 600; color: var(--cor-destaque);
         }
+
+        /* VÍDEOS */
         .videos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
         .video-item {
             background: white; border: 2px solid var(--cor-terra);
@@ -181,6 +211,8 @@
         .video-item iframe { width: 100%; height: 200px; border: none; }
         .video-info { padding: 1.5rem; }
         .video-info h3 { font-family: 'Playfair Display', serif; color: var(--cor-memoria); margin-bottom: 0.5rem; }
+
+        /* CRÉDITOS */
         .creditos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
         .credito-card {
             background: white; padding: 2rem; border: 2px solid var(--cor-terra);
@@ -191,6 +223,8 @@
         .credito-info { font-size: 0.9rem; line-height: 1.5; }
         .instagram-link { color: var(--cor-destaque); text-decoration: none; font-weight: 600; }
         .instagram-link:hover { text-decoration: underline; }
+
+        /* REFERÊNCIAS */
         .referencias-list { background: white; padding: 3rem; border: 2px solid var(--cor-terra); position: relative; }
         .referencias-list::before {
             content: "REFERÊNCIAS"; position: absolute; top: -12px; left: 20px;
@@ -199,6 +233,8 @@
         }
         .referencia-item { padding: 1rem 0; border-bottom: 1px solid #E8D5C4; }
         .referencia-item:last-child { border-bottom: none; }
+
+        /* FOOTER */
         footer {
             background: var(--cor-memoria); color: white; padding: 3rem 2rem;
             text-align: center; position: relative;
@@ -209,6 +245,8 @@
         }
         .footer-content { max-width: 600px; margin: 0 auto; }
         .footer-content p { margin: 0.5rem 0; opacity: 0.9; }
+
+        /* RESPONSIVIDADE */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .sobre-content { grid-template-columns: 1fr; }
@@ -218,9 +256,10 @@
             .btn-mapa { padding: 15px 30px; font-size: 1.1rem; }
             .hero { padding: 6rem 0 3rem 0; }
         }
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 2rem; }
-        }
+
+        @media (max-width: 480px) { .hero h1 { font-size: 2rem; } }
+
+        /* ANIMAÇÕES */
         @keyframes surgir { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .section { animation: surgir 0.8s ease-out; }
     </style>
@@ -230,7 +269,7 @@
     <div id="popup-inicial">
         <div class="popup-content">
             <div class="titulo-dissertacao">
-                ENSINO DE HISTÓRIA E AS MEMÓRIAS DA GUERRILHA DO ARAGUAIA
+                ENSINO DE HISTÓRIA E AS MEMÓRIAS DA GUERRILHA DO ARAGUAIA: PERCEPÇÕES DE ALUNOS E PROFESSORES DA ESCOLA ESTADUAL PROFESSOR LÍCIO SOLHEIRO (BREJO GRANDE DO ARAGUAIA - PA)
             </div>
             <p><strong>Proposta didático-pedagógica - Mestrado Profissional em Ensino de História</strong></p>
             <p><strong>Autor:</strong> Jorge Kitchell Pinheiro Lima</p>
@@ -256,6 +295,22 @@
         </div>
     </header>
 
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.2rem; margin-bottom: 2.5rem;">
+                <h1 style="margin-bottom: 0;">GUERRILHA DO ARAGUAIA</h1>
+                <span class="subtitle" style="font-size: 0.92rem; color: #555; margin-bottom: 0; font-weight: 400; line-height: 1.1; max-width: 320px;">Mapa interativo como proposta didático-pedagógica do Mestrado Profissional em Ensino de História</span>
+            </div>
+            <div class="mapa-container">
+                <div class="icone-mapa">🗺️</div>
+                <h3>Explore o Mapa Interativo</h3>
+                <a href="mapa-qgis.html" target="_blank" class="btn-mapa">ABRIR MAPA</a>
+                <div class="texto-mapa">Visualização completa em uma nova janela</div>
+            </div>
+        </div>
+    </section>
+
     <!-- SOBRE -->
     <section id="sobre" class="section">
         <div class="container">
@@ -263,7 +318,8 @@
             <div class="sobre-content">
                 <div class="sobre-text">
                     <p>Este mapa interativo é a proposta didático-pedagógica final da pesquisa de mestrado desenvolvida por Jorge Kitchell Pinheiro Lima no âmbito do Mestrado Profissional em Ensino de História (PROFHistoria).</p>
-                    <p> A proposta do mapa interativo nasce da compreensão de que o ensino de História precisa dialogar com metodologias inovadoras, capazes de aproximar os alunos dos conteúdos a partir de suas próprias realidades e referências locais...</p>
+                    <p>A proposta do mapa interativo nasce da compreensão de que o ensino de História precisa dialogar com metodologias inovadoras, capazes de aproximar os alunos dos conteúdos a partir de suas próprias realidades e referências locais. Por meio da tecnologia, o mapa permitirá que estudantes, professores e membros da comunidade possam visualizar, explorar e compreender os diferentes locais que foram palco dos acontecimentos ligados à guerrilha e à repressão militar, conectando os fatos históricos às paisagens, aos espaços e às memórias vivas da região.</p>
+                    <p>Utilizando o QGIS para desenvolvimento e qgis2web para publicação, o mapa apresenta locais significativos e informações históricas contextualizadas.</p>
                 </div>
                 <div class="autor-card">
                     <h3>JORGE KITCHELL PINHEIRO LIMA</h3>
@@ -273,12 +329,13 @@
         </div>
     </section>
 
-    <!-- CONTEXTO -->
+    <!-- CONTEXTO HISTÓRICO -->
     <section id="contexto" class="section">
         <div class="container">
             <div class="section-header"><h2>CONTEXTO HISTÓRICO</h2></div>
             <div class="sobre-text">
-                <p>A Guerrilha do Araguaia surgiu no final da década de 1960...</p>
+                <p>A Guerrilha do Araguaia surgiu no final da década de 1960, em meio ao endurecimento do regime militar instaurado após o golpe de 1964...</p>
+                <!-- Conteúdo histórico completo aqui -->
             </div>
         </div>
     </section>
@@ -288,14 +345,42 @@
         <div class="container">
             <div class="section-header"><h2>VÍDEOS DOCUMENTÁRIOS</h2></div>
             <div class="videos-grid">
-                <div class="video-item"><iframe src="https://www.youtube.com/embed/sX6mjSmuqrU" allowfullscreen></iframe><div class="video-info"><h3>Ativa Biografia</h3><p>Documentário sobre a Guerrilha do Araguaia</p></div></div>
-                <div class="video-item"><iframe src="https://www.youtube.com/embed/Z1JTgo3ZGuI" allowfullscreen></iframe><div class="video-info"><h3>TV Grabois</h3><p>Análise histórica do conflito</p></div></div>
-                <div class="video-item"><iframe src="https://www.youtube.com/embed/pIlL7O1XliY" allowfullscreen></iframe><div class="video-info"><h3>TV Grabois</h3><p>Memórias da Guerrilha</p></div></div>
-                <div class="video-item"><iframe src="https://www.youtube.com/embed/mPprWbGaGmo" allowfullscreen></iframe><div class="video-info"><h3>TV Grabois</h3><p>Depoimentos e histórias</p></div></div>
-                <div class="video-item"><iframe src="https://www.youtube.com/embed/wLkmsrfIGZU" allowfullscreen></iframe><div class="video-info"><h3>Memorial da Democracia</h3><p>Documentário histórico</p></div></div>
-                <div class="video-item"><iframe src="https://www.youtube.com/embed/txyr_fgZSac" allowfullscreen></iframe><div class="video-info"><h3>Memorial da Democracia</h3><p>Análise do contexto político</p></div></div>
-                <div class="video-item"><iframe src="https://www.youtube.com/embed/5eHU-Wk8B8M" allowfullscreen></iframe><div class="video-info"><h3>Canal Futura</h3><p>Documentário educativo</p></div></div>
-                <div class="video-item"><iframe src="https://www.youtube.com/embed/QUsGAQ7nNn0" allowfullscreen></iframe><div class="video-info"><h3>A História de Brejo Grande do Araguaia</h3><p>Documentário educativo</p></div></div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/5eHU-Wk8B8M" allowfullscreen></iframe>
+                    <div class="video-info"><h3>TV UFG; Canal Futura</h3><p>Romualdo Pessoa: historiador comenta os conflitos da Guerrilha do Araguaia</p></div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/Z1JTgo3ZGuI" allowfullscreen></iframe>
+                    <div class="video-info"><h3>TV Grabois</h3><p>49 anos da Guerrilha do Araguaia</p></div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/pIlL7O1XliY" allowfullscreen></iframe>
+                    <div class="video-info"><h3>TV Grabois</h3><p>50 anos do desaparecimento de Maurício Grabois</p></div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/mPprWbGaGmo" allowfullscreen></iframe>
+                    <div class="video-info"><h3>TV Grabois</h3><p>João Amazonas Vive! 23 anos sem o gigante do comunismo brasileiro</p></div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/wLkmsrfIGZU" allowfullscreen></iframe>
+                    <div class="video-info"><h3>Memorial da Democracia</h3><p>Camponeses do Araguaia – A Guerrilha vista por dentro</p></div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/txyr_fgZSac" allowfullscreen></iframe>
+                    <div class="video-info"><h3>Memorial da Democracia</h3><p>Camponeses do Araguaia – A Guerrilha vista por dentro</p></div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/QUsGAQ7nNn0" allowfullscreen></iframe>
+                    <div class="video-info"><h3>Jorge Kitchell Pinheiro Lima</h3><p>A história de Brejo Grande do Araguaia 2025</p></div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/sX6mjSmuqrU" allowfullscreen></iframe>
+                    <div class="video-info"><h3>Ativa Biografia</h3><p>Quem foi o Guerrilheiro Osvaldão da Guerrilha do Araguaia?</p></div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/sX6mjSmuqrU" allowfullscreen></iframe>
+                    <div class="video-info"><h3>O Placebo</h3><p>Dinalva Oliveira Teixeira, a guerrilheira que enfrentou a ditadura militar</p></div>
+                </div>
             </div>
         </div>
     </section>
@@ -336,34 +421,28 @@
             <div class="section-header"><h2>REFERÊNCIAS</h2></div>
             <div class="referencias-list">
                 <div class="referencia-item">
-                    TV UFG; CANAL FUTURA. Romualdo Pessoa: historiador comenta os conflitos da Guerrilha do Araguaia. You Tube. Goiânia: TV UFG / Canal Futura, 2021. Disponível em: <a href="https://www.youtube.com/watch?v=5eHU-Wk8B8M&t=38s" target="_blank">link</a>. Acesso em: 14 out. 2025.
+                    TV UFG; CANAL FUTURA. Romualdo Pessoa: historiador comenta os conflitos da Guerrilha do Araguaia. YouTube. Goiânia: TV UFG / Canal Futura, 2021. Disponível em: <a href="https://www.youtube.com/watch?v=5eHU-Wk8B8M&t=38s" target="_blank">https://www.youtube.com/watch?v=5eHU-Wk8B8M&t=38s</a>. Acesso em: 14 out. 2025.
                 </div>
                 <div class="referencia-item">
-                    TV GRABOIS. 49 anos da Guerrilha do Araguaia. You Tube. São Paulo: TV Grabois, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=Z1JTgo3ZGuI" target="_blank">link</a>. Acesso em: 14 out. 2025.
+                    TV GRABOIS. 49 anos da Guerrilha do Araguaia. YouTube. São Paulo: TV Grabois, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=Z1JTgo3ZGuI" target="_blank">https://www.youtube.com/watch?v=Z1JTgo3ZGuI</a>. Acesso em: 14 out. 2025.
                 </div>
                 <div class="referencia-item">
-                    TV GRABOIS. 50 anos do desaparecimento de Maurício Grabois. You Tube. São Paulo: TV Grabois, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=pIlL7O1XliY" target="_blank">link</a>. Acesso em: 14 out. 2025.
+                    TV GRABOIS. 50 anos do desaparecimento de Maurício Grabois. YouTube. São Paulo: TV Grabois, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=pIlL7O1XliY" target="_blank">https://www.youtube.com/watch?v=pIlL7O1XliY</a>. Acesso em: 14 out. 2025.
                 </div>
                 <div class="referencia-item">
-                    TV GRABOIS. João Amazonas Vive! 23 anos sem o gigante do comunismo brasileiro. You Tube. São Paulo: TV Grabois, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=mPprWbGaGmo" target="_blank">link</a>. Acesso em: 14 out. 2025.
+                    TV GRABOIS. João Amazonas Vive! 23 anos sem o gigante do comunismo brasileiro. YouTube. São Paulo: TV Grabois, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=mPprWbGaGmo" target="_blank">https://www.youtube.com/watch?v=mPprWbGaGmo</a>. Acesso em: 14 out. 2025.
                 </div>
                 <div class="referencia-item">
-                    FERNANDES, Vandré. Camponeses do Araguaia – A Guerrilha vista por dentro. You Tube. Brasília: Memorial da Democracia, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=wLkmsrfIGZU&t=2s" target="_blank">link</a>. Acesso em: 14 out. 2025.
+                    FERNANDES, Vandré. Camponeses do Araguaia – A Guerrilha vista por dentro. YouTube. Brasília: Memorial da Democracia, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=wLkmsrfIGZU" target="_blank">https://www.youtube.com/watch?v=wLkmsrfIGZU</a>. Acesso em: 14 out. 2025.
                 </div>
                 <div class="referencia-item">
-                    FERNANDES, Vandré. Camponeses do Araguaia – A Guerrilha vista por dentro. You Tube. Brasília: Memorial da Democracia, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=txyr_fgZSac" target="_blank">link</a>. Acesso em: 14 out. 2025.
+                    PINHEIRO LIMA, Jorge Kitchell. A história de Brejo Grande do Araguaia 2025. YouTube, 2025. Disponível em: <a href="https://www.youtube.com/watch?v=QUsGAQ7nNn0" target="_blank">https://www.youtube.com/watch?v=QUsGAQ7nNn0</a>. Acesso em: 14 out. 2025.
                 </div>
                 <div class="referencia-item">
-                    PINHEIRO LIMA, Jorge Kitchell. A história de Brejo Grande do Araguaia 2025. You Tube. Brejo Grande do Araguaia: Jorge Kitchell Pinheiro Lima, 2025. Disponível em: <a href="https://www.youtube.com/watch?v=QUsGAQ7nNn0&t=1s" target="_blank">link</a>. Acesso em: 14 out. 2025.
+                    ATIVA BIOGRAFIA. Quem foi o Guerrilheiro Osvaldão da Guerrilha do Araguaia? YouTube, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=sX6mjSmuqrU" target="_blank">https://www.youtube.com/watch?v=sX6mjSmuqrU</a>. Acesso em: 14 out. 2025.
                 </div>
                 <div class="referencia-item">
-                    ATIVA BIOGRAFIA. Quem foi o Guerrilheiro Osvaldão da Guerrilha do Araguaia? You Tube, 1 jan. 2025. Disponível em: <a href="https://www.youtube.com/watch?v=sX6mjSmuqrU&t=6s" target="_blank">link</a>. Acesso em: 14 out. 2025.
-                </div>
-                <div class="referencia-item">
-                    MORAIS, Taís; SILVA, Eumano. Operação Araguaia: os arquivos secretos da guerrilha. São Paulo: Geração Editorial, 2005.
-                </div>
-                <div class="referencia-item">
-                    O PLACEBO. Dinalva Oliveira Teixeira, a guerrilheira que enfrentou a ditadura militar. YouTube, 27 de fev. 2022. Disponível em: <a href="https://www.youtube.com/watch?time_continue=6&v=sX6mjSmuqrU" target="_blank">link</a>. Acesso em: 15 out. 2025.
+                    O PLACEBO. Dinalva Oliveira Teixeira, a guerrilheira que enfrentou a ditadura militar. YouTube, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=sX6mjSmuqrU" target="_blank">https://www.youtube.com/watch?v=sX6mjSmuqrU</a>. Acesso em: 14 out. 2025.
                 </div>
             </div>
         </div>
@@ -372,21 +451,13 @@
     <!-- FOOTER -->
     <footer>
         <div class="footer-content">
-            <div style="display: flex; justify-content: center; align-items: center; gap: 2.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-                <img src="logos/UFNT.png" alt="UFNT" style="height: 54px; max-width: 120px; object-fit: contain; background: #fff; border-radius: 6px; padding: 4px;">
-                <img src="logos/PROFHISTORIA.png" alt="PROFHISTORIA" style="height: 54px; max-width: 120px; object-fit: contain; background: #fff; border-radius: 6px; padding: 4px;">
-                <img src="logos/LAPMAP.png" alt="LAPMAP" style="height: 54px; max-width: 120px; object-fit: contain; background: #fff; border-radius: 6px; padding: 4px;">
-            </div>
-            <p><strong>Mapa Interativo - Guerrilha do Araguaia</strong></p>
-            <p>Proposta didático-pedagógica - Mestrado Profissional em Ensino de História</p>
-            <p>Desenvolvimento do site: Jenifer R. Silva - <a href="https://www.instagram.com/labmap.s/" target="_blank" class="instagram-link">@labmap.s</a></p>
+            <p>&copy; 2025 Memória Araguaia - Todos os direitos reservados</p>
         </div>
     </footer>
 
     <script>
-        function fecharPopup() {
-            document.getElementById('popup-inicial').style.display = 'none';
-        }
+        function fecharPopup() { document.getElementById('popup-inicial').style.display = 'none'; }
     </script>
 </body>
 </html>
+
