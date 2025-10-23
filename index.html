@@ -122,7 +122,7 @@
             color: #444;
         }
 
-        /* MAPA */
+        /* CONTAINER DO BOTÃO DO MAPA */
         .mapa-container {
             margin: 3rem auto;
             max-width: 600px;
@@ -189,7 +189,10 @@
 
         /* LAYOUT */
         .sobre-content { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
-        .sobre-text { font-size: 1.1rem; line-height: 1.8; text-align: justify; }
+        .sobre-text { font-size: 1.1rem; line-height: 1.8; }
+        .sobre-text.contexto-justificado, .sobre-text.sobre-justificado { text-align: justify; }
+        .sobre-text p { margin-bottom: 1.5rem; }
+
         .autor-card {
             background: white; padding: 2rem; border: 2px solid var(--cor-terra);
             box-shadow: 8px 8px 0px var(--cor-memoria); position: relative;
@@ -233,6 +236,8 @@
         }
         .referencia-item { padding: 1rem 0; border-bottom: 1px solid #E8D5C4; }
         .referencia-item:last-child { border-bottom: none; }
+        .referencia-item ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+        .referencia-item li { margin-bottom: 0.5rem; }
 
         /* FOOTER */
         footer {
@@ -256,11 +261,15 @@
             .btn-mapa { padding: 15px 30px; font-size: 1.1rem; }
             .hero { padding: 6rem 0 3rem 0; }
         }
-
-        @media (max-width: 480px) { .hero h1 { font-size: 2rem; } }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2rem; }
+        }
 
         /* ANIMAÇÕES */
-        @keyframes surgir { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes surgir {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         .section { animation: surgir 0.8s ease-out; }
     </style>
 </head>
@@ -305,8 +314,12 @@
             <div class="mapa-container">
                 <div class="icone-mapa">🗺️</div>
                 <h3>Explore o Mapa Interativo</h3>
-                <a href="mapa-qgis.html" target="_blank" class="btn-mapa">ABRIR MAPA</a>
-                <div class="texto-mapa">Visualização completa em uma nova janela</div>
+                <a href="mapa-qgis.html" target="_blank" class="btn-mapa">
+                    ABRIR MAPA
+                </a>
+                <div class="texto-mapa">
+                    Visualização completa em uma nova janela
+                </div>
             </div>
         </div>
     </section>
@@ -316,9 +329,9 @@
         <div class="container">
             <div class="section-header"><h2>SOBRE O MAPA</h2></div>
             <div class="sobre-content">
-                <div class="sobre-text">
+                <div class="sobre-text sobre-justificado">
                     <p>Este mapa interativo é a proposta didático-pedagógica final da pesquisa de mestrado desenvolvida por Jorge Kitchell Pinheiro Lima no âmbito do Mestrado Profissional em Ensino de História (PROFHistoria).</p>
-                    <p>A proposta do mapa interativo nasce da compreensão de que o ensino de História precisa dialogar com metodologias inovadoras, capazes de aproximar os alunos dos conteúdos a partir de suas próprias realidades e referências locais. Por meio da tecnologia, o mapa permitirá que estudantes, professores e membros da comunidade possam visualizar, explorar e compreender os diferentes locais que foram palco dos acontecimentos ligados à guerrilha e à repressão militar, conectando os fatos históricos às paisagens, aos espaços e às memórias vivas da região.</p>
+                    <p> A proposta do mapa interativo nasce da compreensão de que o ensino de História precisa dialogar com metodologias inovadoras, capazes de aproximar os alunos dos conteúdos a partir de suas próprias realidades e referências locais. Por meio da tecnologia, o mapa permitirá que estudantes, professores e membros da comunidade possam visualizar, explorar e compreender os diferentes locais que foram palco dos acontecimentos ligados à guerrilha e à repressão militar, conectando os fatos históricos às paisagens, aos espaços e às memórias vivas da região.</p>
                     <p>Utilizando o QGIS para desenvolvimento e qgis2web para publicação, o mapa apresenta locais significativos e informações históricas contextualizadas.</p>
                 </div>
                 <div class="autor-card">
@@ -329,13 +342,16 @@
         </div>
     </section>
 
-    <!-- CONTEXTO HISTÓRICO -->
+    <!-- CONTEXTO -->
     <section id="contexto" class="section">
         <div class="container">
             <div class="section-header"><h2>CONTEXTO HISTÓRICO</h2></div>
-            <div class="sobre-text">
-                <p>A Guerrilha do Araguaia surgiu no final da década de 1960, em meio ao endurecimento do regime militar instaurado após o golpe de 1964...</p>
-                <!-- Conteúdo histórico completo aqui -->
+            <div class="sobre-text contexto-justificado">
+                <p>A Guerrilha do Araguaia surgiu no final da década de 1960, em meio ao endurecimento do regime militar instaurado após o golpe de 1964. Nesse cenário, o Partido Comunista do Brasil (PCdoB), criado em 1962 a partir de uma cisão do PCB, defendia que não seria possível alcançar o socialismo no país por vias pacíficas. Para seus militantes, diante da repressão política e da influência do imperialismo norte-americano, a resistência armada seria inevitável.</p>
+                <p>A região escolhida para o foco guerrilheiro foi o sudeste do Pará, às margens do rio Araguaia, marcada por pobreza, isolamento do Estado e intensos conflitos fundiários. A partir de 1966, militantes do PCdoB passaram a viver entre camponeses, buscando apoio por meio de atividades comunitárias, como a abertura de escolas e pequenos comércios. O objetivo era preparar uma guerra popular prolongada, inspirada no modelo chinês, na qual a guerrilha cumpriria o papel inicial de organização das massas rurais.</p>
+                <p>Com o acirramento da ditadura após o AI-5, em 1968, o projeto se consolidou, mas, em 1972, os serviços de inteligência do Exército descobriram a presença dos militantes na região. Entre 1972 e 1974, as Forças Armadas desencadearam grandes operações — como Papagaio, Sucuri e Marajoara — que envolveram milhares de soldados contra pouco mais de 70 guerrilheiros. A repressão utilizou métodos de guerra contrainsurgente, como infiltração, propaganda, tortura sistemática, execuções sumárias e ocultação de cadáveres.</p>
+                <p>A guerrilha foi completamente derrotada em 1974, deixando a maioria de seus integrantes mortos ou desaparecidos. Além dos combatentes, centenas de camponeses foram presos, torturados e perseguidos sob acusação de colaborar com o movimento. Apesar da vitória militar, o episódio evidenciou a violência de Estado, revelando práticas arbitrárias e brutais que marcaram profundamente a população local.</p>
+                <p>Na memória nacional, a Guerrilha do Araguaia tornou-se símbolo tanto da resistência contra a ditadura quanto da violência repressiva. Durante décadas, o governo ocultou informações sobre os mortos e desaparecidos, negando acesso a documentos e aos locais de sepultamento. Apenas com a redemocratização, a luta de familiares e movimentos sociais trouxe o tema à tona, resultando na criação da Comissão Especial sobre Mortos e Desaparecidos Políticos (1995) e da Comissão Nacional da Verdade (2011-2014). Ainda hoje, muitos corpos não foram encontrados, e a Guerrilha do Araguaia permanece como um dos capítulos mais emblemáticos da disputa por memória, verdade e justiça no Brasil.</p>
             </div>
         </div>
     </section>
@@ -346,40 +362,36 @@
             <div class="section-header"><h2>VÍDEOS DOCUMENTÁRIOS</h2></div>
             <div class="videos-grid">
                 <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/5eHU-Wk8B8M" allowfullscreen></iframe>
-                    <div class="video-info"><h3>TV UFG; Canal Futura</h3><p>Romualdo Pessoa: historiador comenta os conflitos da Guerrilha do Araguaia</p></div>
+                    <iframe src="https://www.youtube.com/embed/sX6mjSmuqrU" allowfullscreen></iframe>
+                    <div class="video-info"><h3>Ativa Biografia</h3><p>Documentário sobre a Guerrilha do Araguaia</p></div>
                 </div>
                 <div class="video-item">
                     <iframe src="https://www.youtube.com/embed/Z1JTgo3ZGuI" allowfullscreen></iframe>
-                    <div class="video-info"><h3>TV Grabois</h3><p>49 anos da Guerrilha do Araguaia</p></div>
+                    <div class="video-info"><h3>TV Grabois</h3><p>Análise histórica do conflito</p></div>
                 </div>
                 <div class="video-item">
                     <iframe src="https://www.youtube.com/embed/pIlL7O1XliY" allowfullscreen></iframe>
-                    <div class="video-info"><h3>TV Grabois</h3><p>50 anos do desaparecimento de Maurício Grabois</p></div>
+                    <div class="video-info"><h3>TV Grabois</h3><p>Memórias da Guerrilha</p></div>
                 </div>
                 <div class="video-item">
                     <iframe src="https://www.youtube.com/embed/mPprWbGaGmo" allowfullscreen></iframe>
-                    <div class="video-info"><h3>TV Grabois</h3><p>João Amazonas Vive! 23 anos sem o gigante do comunismo brasileiro</p></div>
+                    <div class="video-info"><h3>TV Grabois</h3><p>Depoimentos e histórias</p></div>
                 </div>
                 <div class="video-item">
                     <iframe src="https://www.youtube.com/embed/wLkmsrfIGZU" allowfullscreen></iframe>
-                    <div class="video-info"><h3>Memorial da Democracia</h3><p>Camponeses do Araguaia – A Guerrilha vista por dentro</p></div>
+                    <div class="video-info"><h3>Memorial da Democracia</h3><p>Documentário histórico</p></div>
                 </div>
                 <div class="video-item">
                     <iframe src="https://www.youtube.com/embed/txyr_fgZSac" allowfullscreen></iframe>
-                    <div class="video-info"><h3>Memorial da Democracia</h3><p>Camponeses do Araguaia – A Guerrilha vista por dentro</p></div>
+                    <div class="video-info"><h3>Memorial da Democracia</h3><p>Análise do contexto político</p></div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/5eHU-Wk8B8M" allowfullscreen></iframe>
+                    <div class="video-info"><h3>Canal Futura</h3><p>Documentário educativo</p></div>
                 </div>
                 <div class="video-item">
                     <iframe src="https://www.youtube.com/embed/QUsGAQ7nNn0" allowfullscreen></iframe>
-                    <div class="video-info"><h3>Jorge Kitchell Pinheiro Lima</h3><p>A história de Brejo Grande do Araguaia 2025</p></div>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/sX6mjSmuqrU" allowfullscreen></iframe>
-                    <div class="video-info"><h3>Ativa Biografia</h3><p>Quem foi o Guerrilheiro Osvaldão da Guerrilha do Araguaia?</p></div>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/sX6mjSmuqrU" allowfullscreen></iframe>
-                    <div class="video-info"><h3>O Placebo</h3><p>Dinalva Oliveira Teixeira, a guerrilheira que enfrentou a ditadura militar</p></div>
+                    <div class="video-info"><h3>A História de Brejo Grande do Araguaia</h3><p>Documentário educativo</p></div>
                 </div>
             </div>
         </div>
@@ -421,28 +433,26 @@
             <div class="section-header"><h2>REFERÊNCIAS</h2></div>
             <div class="referencias-list">
                 <div class="referencia-item">
-                    TV UFG; CANAL FUTURA. Romualdo Pessoa: historiador comenta os conflitos da Guerrilha do Araguaia. YouTube. Goiânia: TV UFG / Canal Futura, 2021. Disponível em: <a href="https://www.youtube.com/watch?v=5eHU-Wk8B8M&t=38s" target="_blank">https://www.youtube.com/watch?v=5eHU-Wk8B8M&t=38s</a>. Acesso em: 14 out. 2025.
+                    <p><strong>Fontes Documentais:</strong> Todos os dados e referências para construção deste mapa foram disponibilizados pelo mestrando Jorge Kitchell Pinheiro Lima.</p>
                 </div>
                 <div class="referencia-item">
-                    TV GRABOIS. 49 anos da Guerrilha do Araguaia. YouTube. São Paulo: TV Grabois, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=Z1JTgo3ZGuI" target="_blank">https://www.youtube.com/watch?v=Z1JTgo3ZGuI</a>. Acesso em: 14 out. 2025.
+                    <p><strong>Base Cartográfica:</strong> Desenvolvida através do QGIS com integração via qgis2web para publicação web.</p>
                 </div>
                 <div class="referencia-item">
-                    TV GRABOIS. 50 anos do desaparecimento de Maurício Grabois. YouTube. São Paulo: TV Grabois, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=pIlL7O1XliY" target="_blank">https://www.youtube.com/watch?v=pIlL7O1XliY</a>. Acesso em: 14 out. 2025.
+                    <p><strong>Referências Completas:</strong> Disponíveis na dissertação completa defendida no programa de Mestrado Profissional em Ensino de História.</p>
                 </div>
                 <div class="referencia-item">
-                    TV GRABOIS. João Amazonas Vive! 23 anos sem o gigante do comunismo brasileiro. YouTube. São Paulo: TV Grabois, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=mPprWbGaGmo" target="_blank">https://www.youtube.com/watch?v=mPprWbGaGmo</a>. Acesso em: 14 out. 2025.
-                </div>
-                <div class="referencia-item">
-                    FERNANDES, Vandré. Camponeses do Araguaia – A Guerrilha vista por dentro. YouTube. Brasília: Memorial da Democracia, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=wLkmsrfIGZU" target="_blank">https://www.youtube.com/watch?v=wLkmsrfIGZU</a>. Acesso em: 14 out. 2025.
-                </div>
-                <div class="referencia-item">
-                    PINHEIRO LIMA, Jorge Kitchell. A história de Brejo Grande do Araguaia 2025. YouTube, 2025. Disponível em: <a href="https://www.youtube.com/watch?v=QUsGAQ7nNn0" target="_blank">https://www.youtube.com/watch?v=QUsGAQ7nNn0</a>. Acesso em: 14 out. 2025.
-                </div>
-                <div class="referencia-item">
-                    ATIVA BIOGRAFIA. Quem foi o Guerrilheiro Osvaldão da Guerrilha do Araguaia? YouTube, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=sX6mjSmuqrU" target="_blank">https://www.youtube.com/watch?v=sX6mjSmuqrU</a>. Acesso em: 14 out. 2025.
-                </div>
-                <div class="referencia-item">
-                    O PLACEBO. Dinalva Oliveira Teixeira, a guerrilheira que enfrentou a ditadura militar. YouTube, 2023. Disponível em: <a href="https://www.youtube.com/watch?v=sX6mjSmuqrU" target="_blank">https://www.youtube.com/watch?v=sX6mjSmuqrU</a>. Acesso em: 14 out. 2025.
+                    <p><strong>Referências dos Vídeos:</strong></p>
+                    <ul>
+                        <li>Ativa Biografia – Documentário sobre a Guerrilha do Araguaia. YouTube: <a href="https://www.youtube.com/watch?v=sX6mjSmuqrU" target="_blank">link</a></li>
+                        <li>TV Grabois – Análise histórica do conflito. YouTube: <a href="https://www.youtube.com/watch?v=Z1JTgo3ZGuI" target="_blank">link</a></li>
+                        <li>TV Grabois – Memórias da Guerrilha. YouTube: <a href="https://www.youtube.com/watch?v=pIlL7O1XliY" target="_blank">link</a></li>
+                        <li>TV Grabois – Depoimentos e histórias. YouTube: <a href="https://www.youtube.com/watch?v=mPprWbGaGmo" target="_blank">link</a></li>
+                        <li>Memorial da Democracia – Documentário histórico. YouTube: <a href="https://www.youtube.com/watch?v=wLkmsrfIGZU" target="_blank">link</a></li>
+                        <li>Memorial da Democracia – Análise do contexto político. YouTube: <a href="https://www.youtube.com/watch?v=txyr_fgZSac" target="_blank">link</a></li>
+                        <li>Canal Futura – Documentário educativo. YouTube: <a href="https://www.youtube.com/watch?v=5eHU-Wk8B8M" target="_blank">link</a></li>
+                        <li>A História de Brejo Grande do Araguaia – Documentário educativo. YouTube: <a href="https://www.youtube.com/watch?v=QUsGAQ7nNn0" target="_blank">link</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -451,13 +461,21 @@
     <!-- FOOTER -->
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 Memória Araguaia - Todos os direitos reservados</p>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 2.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                <img src="logos/UFNT.png" alt="UFNT" style="height: 54px; max-width: 120px; object-fit: contain; background: #fff; border-radius: 6px; padding: 4px;">
+                <img src="logos/PROFHISTORIA.png" alt="PROFHISTORIA" style="height: 54px; max-width: 120px; object-fit: contain; background: #fff; border-radius: 6px; padding: 4px;">
+                <img src="logos/LAPMAP.png" alt="LAPMAP" style="height: 54px; max-width: 120px; object-fit: contain; background: #fff; border-radius: 6px; padding: 4px;">
+            </div>
+            <p><strong>Mapa Interativo - Guerrilha do Araguaia</strong></p>
+            <p>Proposta didático-pedagógica - Mestrado Profissional em Ensino de História</p>
+            <p>Desenvolvido por Jenifer R. Silva | <a href="https://www.instagram.com/labmap.s/" target="_blank" style="color: white; text-decoration: underline;">@labmap.s</a> <span style="opacity: 0.8;">&copy; 2025</span></p>
         </div>
     </footer>
 
     <script>
-        function fecharPopup() { document.getElementById('popup-inicial').style.display = 'none'; }
+        function fecharPopup() {
+            document.getElementById('popup-inicial').style.display = 'none';
+        }
     </script>
 </body>
 </html>
-
